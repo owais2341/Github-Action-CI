@@ -59,3 +59,8 @@ jobs:
           end_time=$(date +%s)
           elapsed=$((end_time - $start_time))
           echo "Time taken: ${elapsed} seconds"
+       # Step 6: List cached files
+      - name: List cached npm files
+        run: |
+          echo "Cached npm packages:"
+          ls -la ~/.npm
