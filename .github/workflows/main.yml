@@ -66,4 +66,11 @@ jobs:
         with:
           name: installed-packages
           path: ./node_modules
+          
+      # Step 8: Upload npm cache as artifact
+      - name: Upload npm cache as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: npm-cache
+          path: ~/.npm
 
