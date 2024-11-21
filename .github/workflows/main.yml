@@ -60,13 +60,6 @@ jobs:
           elapsed=$((end_time - $start_time))
           echo "Time taken: ${elapsed} seconds"
           
-      # Step 7: Upload node_modules as an artifact       
-      - name: Upload node_modules as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: installed-packages
-          path: ./node_modules
-          
       # Step 8: Upload npm cache as artifact
       - name: Upload npm cache as artifact
         uses: actions/upload-artifact@v3
