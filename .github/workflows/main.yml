@@ -24,7 +24,18 @@ jobs:
       - name: Download Packages
         run: |
           echo "Installing some packages..."
-          npm install axios lodash moment # Replace with your own packages
+          npm install \
+            axios \
+            lodash \
+            moment \
+            react \
+            express \
+            typescript \
+            next \
+            vue \
+            react-dom \
+            three \
+            @angular/core
 
       # Step 4: End timer and calculate elapsed time
       - name: Measure elapsed time
