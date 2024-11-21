@@ -59,7 +59,11 @@ jobs:
           end_time=$(date +%s)
           elapsed=$((end_time - $start_time))
           echo "Time taken: ${elapsed} seconds"
-          
+      - name: List npm cache contents
+        run: |
+          echo "Contents of ~/.npm:"
+          ls -R ~/.npm
+
       # Step 8: Upload npm cache as artifact
       - name: Upload npm cache as artifact
         uses: actions/upload-artifact@v3
