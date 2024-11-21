@@ -1,4 +1,4 @@
-name: Test Package Download Without Cache
+name: Test Package Download With Cache
 
 on:
   push:
@@ -20,7 +20,16 @@ jobs:
         id: start-time
         run: echo "start_time=$(date +%s)" >> $GITHUB_ENV
 
-      # Step 3: Download packages (e.g., using npm or pip)
+      # Step 3: Restore npm cache
+      - name: Restore npm cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # Step 4: Download packages
       - name: Download Packages
         run: |
           echo "Installing some packages..."
@@ -37,7 +46,14 @@ jobs:
             three \
             @angular/core
 
-      # Step 4: End timer and calculate elapsed time
+      # Step 5: Save npm cache
+      - name: Save npm cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+      # Step 6: End timer and calculate elapsed time
       - name: Measure elapsed time
         run: |
           end_time=$(date +%s)
