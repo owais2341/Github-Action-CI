@@ -65,5 +65,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: npm-cache
-          path: ~/.npm
+          path: /home/runner/.npm
 
