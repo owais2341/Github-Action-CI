@@ -75,5 +75,10 @@ jobs:
         run: |
           echo "Calculating size of node_modules..."
           du -sh ./node_modules
+          
+      - name: Measure size of npm cache
+        run: |
+          echo "Calculating size of npm cache..."
+          du -sh ~/.npm
 
 
