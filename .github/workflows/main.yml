@@ -71,3 +71,9 @@ jobs:
           name: npm-cache
           path: /home/runner/.npm
 
+      - name: Measure size of node_modules
+        run: |
+          echo "Calculating size of node_modules..."
+          du -sh ./node_modules
+
+
