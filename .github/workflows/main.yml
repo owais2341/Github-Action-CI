@@ -65,11 +65,11 @@ jobs:
           ls -R ~/.npm
 
       # Step 8: Upload npm cache as artifact
-      - name: Upload npm cache as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: npm-cache
-          path: /home/runner/.npm
+      #- name: Upload npm cache as artifact
+      #  uses: actions/upload-artifact@v3
+       # with:
+       #   name: npm-cache
+        #  path: /home/runner/.npm
 
       - name: Measure size of node_modules
         run: |
