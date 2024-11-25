@@ -44,8 +44,8 @@ jobs:
             vue \
             react-dom \
             three \
-            @angular/core
-            dotenv
+            @angular/core \
+            moment-timezone
       # Step 5: Save npm cache
       - name: Save npm cache
         uses: actions/cache@v3
